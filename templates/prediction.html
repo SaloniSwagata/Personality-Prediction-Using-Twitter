@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-color: darkslategrey;
+}
+
+h1 {
+  color: palevioletred;
+  text-align: center;
+}
+
+p {
+  color: floralwhite;
+  font-family: helvetica;
+  font-size: 45px;
+  text-align: center;
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+}
+li{
+  color: lightblue;
+  font-family: helvetica;
+}
+
+</style>
+</head>
+<body>
+<h1>Myers-Briggs Personality Type Prediction</h1>
+<img src="{{url_for('static', filename='prediction.png')}}">
+<p>@{{username}} is {{predicted_type}} </p> 
+
+<p> -Tweets- </p>
+{% for tweet in tweets %}
+<li><span class="my-handle">></span><input type="hidden" name="handles[]" value="{{ tweet }}"/>{{ tweet }}</li>
+{% endfor %}
+</body>
+</html>

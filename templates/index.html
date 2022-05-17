@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-color: darkslategrey;
+}
+
+h1 {
+  color: palevioletred;
+  text-align: center;
+}
+
+p {
+  color:  whitesmoke;
+  font-family: helvetica;
+  font-size: 20px;
+  text-align: center;
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+input[type=text], form {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+input[type=submit]:hover {
+  background-color: whitesmoke;
+}
+
+</style>
+</head>
+<body>
+<h1>Myers-Briggs Personality Type Classification</h1>
+<img src="{{url_for('static', filename='personalities.png')}}">
+<p>Enter the username of Twitter user</p>
+<form action="{{url_for('prediction')}}" style="margin: auto; width: 220px;" method="POST">
+    <input type="text" id="username" name="username" placeholder="Username">
+    <input type="submit" value="Predict">
+</form>
+</body>
+</html>
